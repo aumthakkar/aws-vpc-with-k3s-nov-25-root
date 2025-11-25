@@ -1,13 +1,13 @@
 module "aws_vpc_k3s" {
   source = "github.com/aumthakkar/aws-vpc-with-k3s-nov-25.git"
 
-  vpc_cidr    = "10.0.0.0/16"
+  vpc_cidr    = var.vpc_cidr
   name_prefix = "pht-dev"
 
   public_subnet_count = 2
 
   auto_create_public_subnets = true
-  public_subnet_cidr_block   = ["10.22.0.24/24", "10.24.0.24/24"]
+  public_subnet_cidr_block   = var.public_subnet_cidr_block
 
   ssh_access_ip = "0.0.0.0/0"
 
@@ -25,7 +25,7 @@ module "aws_vpc_k3s" {
 
 
   db_storage = 10
-  db_name    = "rancher"
+  db_name    = var.db_name 
 
   db_identifier     = "pht-db"
   db_instance_class = "db.t3.micro"
@@ -41,7 +41,7 @@ module "aws_vpc_k3s" {
 
 
   k3s_instance_count = 1
-  public_key_path    = "../aws-tf/mtckey.pub"
+  public_key    = var.public_key
 
   ec2_instance_type = "t3.micro"
   key_name          = "mtckey"
