@@ -30,8 +30,8 @@ module "aws_vpc_k3s" {
   db_identifier     = "pht-db"
   db_instance_class = "db.t3.micro"
 
-  db_username = "pranav"
-  db_password = "t4b!2025"
+  db_username = var.db_username
+  db_password = var.db_password
 
 
   db_engine         = "mysql"
