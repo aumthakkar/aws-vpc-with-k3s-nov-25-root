@@ -7,10 +7,9 @@ on:
   pull_request:
     branches:
       - main
-  
   workflow_dispatch:
     inputs:
-      actions:
+      action:
         description: Manual Trigger workflows
         default: destroy
         required: true
