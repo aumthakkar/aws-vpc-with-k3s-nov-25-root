@@ -52,6 +52,8 @@ jobs:
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: ${{ env.TF_VERSION }}
 
     - name: Initialize, Validate and Terraform Plan
       run: |
@@ -91,6 +93,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
 
       
       - name: Initialize Terraform
@@ -120,6 +124,8 @@ jobs:
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
 
       - name: Initialize Terraform
         run: |
