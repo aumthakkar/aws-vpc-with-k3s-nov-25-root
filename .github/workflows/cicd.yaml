@@ -122,7 +122,7 @@ jobs:
           aws-region: "eu-north-1"
 
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform
+        uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: ${{ env.TF_VERSION }}
 
